@@ -15,7 +15,7 @@ steps:
     command: 'install'
     artifactoryConnection: 'clouddse-arti'
     sourceRepo: 'anusha-test-npm'
-    workingFolder: 'npm-example/package.json'
+    workingFolder: 'project-examples/npm-example/package.json'
     collectBuildInfo: true
     threads: '1'
     buildName: '$(Build.DefinitionName)'
