@@ -11,15 +11,14 @@ pool:
 
 steps:
 
-- task: Gradle@3
-  inputs:
-    gradleWrapperFile: 'gradlew'
-    workingDirectory: 'project-examples/gradle-examples/gradle-example-multi-repos/'
-    tasks: 'build'
-    publishJUnitResults: true
-    testResultsFiles: '**/TEST-*.xml'
-    javaHomeOption: 'JDKVersion'
-    sonarQubeRunAnalysis: false
-    spotBugsAnalysis: false
 
+- task: JFrogGradle@1
+  inputs:
+    gradleBuildFile: 'build.gradle'
+    workDir: 'project-examples/gradle-examples/gradle-example-multi-repos/'
+    tasks: 'artifactoryPublish'
+    artifactoryResolverService: 'v2-hts'
+    sourceRepo: 'gradle-gradle-dev'
+    artifactoryDeployerService: 'v2-hts'
+    targetRepo: 'gradle-gradle-dev'
 
