@@ -10,13 +10,15 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: JFrogNpm@1
+
+- task: JFrogGradle@1
   inputs:
-    command: 'install'
-    artifactoryConnection: 'clouddse-arti'
-    sourceRepo: 'anusha-test-npm'
-    workingFolder: 'project-examples/npm-example/package.json'
-    collectBuildInfo: true
-    threads: '1'
-    buildName: '$(Build.DefinitionName)'
-    buildNumber: '$(Build.BuildNumber)'
+    gradleBuildFile: 'build.gradle'
+    workDir: 'project-examples/gradle-examples/gradle-example/'
+    options: 'gradle build'
+    tasks: 'artifactoryPublish'
+    artifactoryResolverService: 'v2-hts'
+    sourceRepo: 'gradle-gradle-dev'
+    artifactoryDeployerService: 'v2-hts'
+    targetRepo: 'gradle-gradle-dev'
+
