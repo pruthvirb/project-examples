@@ -13,8 +13,8 @@ steps:
 
 - task: JFrogToolsInstaller@1
   inputs:
-    artifactoryConnection: 'cloud'
-    cliInstallationRepo: 'jf-remote'
+    artifactoryConnection: 'v2-hts'
+    cliInstallationRepo: 'jf-cli-remote'
     installCustomVersion: true
     cliVersion: '2.36.1'
 
