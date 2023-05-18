@@ -11,6 +11,12 @@ pool:
 
 steps:
 
+- task: JFrogToolsInstaller@1
+  inputs:
+    artifactoryConnection: 'cloud'
+    cliInstallationRepo: 'jf-remote'
+    installCustomVersion: true
+    cliVersion: '2.36.1'
 
 - task: JFrogGradle@1
   inputs:
