@@ -14,7 +14,6 @@ steps:
   inputs:
     gradleBuildFile: 'build.gradle'
     workDir: 'gradle-examples/gradle-example-multi-repos'
-    options: 'clean install'
     tasks: 'artifactoryPublish'
     artifactoryResolverService: 'v2-hts'
     sourceRepo: 'pruthvi-gradle-dev'
