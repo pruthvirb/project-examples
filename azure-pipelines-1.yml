@@ -16,3 +16,12 @@ steps:
     artifactoryConnection: 'v2-hts'
     targetResolveRepo: 'nuget'
     solutionPath: 'nuget-example/multi-example/*.sln'
+- task: JFrogNuGet@1
+  inputs:
+    command: 'push'
+    artifactoryConnection: 'v2-hts'
+    targetDeployRepo: 'nuget'
+    pathToNupkg: '*.nupkg'
+    collectBuildInfo: true
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
