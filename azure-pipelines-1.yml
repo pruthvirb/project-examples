@@ -18,6 +18,6 @@ steps:
     solutionPath: 'nuget-example/multi-example/*.sln'
 - task: ArtifactoryPublishBuildInfo@1
   inputs:
-    artifactoryService: ‘v2-hts-arti’
-    buildName: ‘$(Build.DefinitionName)’
-    buildNumber: ‘$(Build.BuildNumber)’
+    artifactoryService: 'v2-hts-arti'
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
