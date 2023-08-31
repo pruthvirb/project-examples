@@ -16,8 +16,16 @@ steps:
     artifactoryConnection: 'v2-hts'
     targetResolveRepo: 'nuget'
     solutionPath: 'nuget-example/multi-example/*.sln'
-- task: ArtifactoryPublishBuildInfo@1
+- task: JFrogPublishBuildInfo@1
   inputs:
-    artifactoryService: 'v2-hts-arti'
+    artifactoryConnection: 'v2-hts'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
+
+- task: JFrogBuildScan@1
+  inputs:
+    xrayConnection: 'v2-hts2-xray'
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
+    allowFailBuild: true
+    vuln: true
