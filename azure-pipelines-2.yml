@@ -1,0 +1,26 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: JFrogGradle@1
+  inputs:
+    gradleBuildFile: 'build.gradle'
+    workDir: 'gradle-examples/gradle-example-multi-repos'
+    options: 'clean install'
+    tasks: 'artifactoryPublish'
+    artifactoryResolverService: 'v2-hts'
+    sourceRepo: 'pruthvi-gradle-dev'
+    artifactoryDeployerService: 'v2-hts'
+    targetRepo: 'pruthvi-gradle-dev'
+    collectBuildInfo: true
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
+    javaHomeOption: 'JDKVersion'
