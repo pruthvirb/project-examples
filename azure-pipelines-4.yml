@@ -1,0 +1,21 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: JFrogDocker@1
+  inputs:
+    command: 'Pull'
+    artifactoryConnection: 'hts2-accesstoken'
+    imageName: 'hts2-pruthvi-docker.jfrog.io/nginx:latest'
+    collectBuildInfo: true
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
+    skipLogin: false
