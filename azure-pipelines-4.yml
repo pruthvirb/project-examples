@@ -14,7 +14,7 @@ steps:
 - task: JFrogToolsInstaller@1
   inputs:
     artifactoryConnection: 'hts2-accesstoken'
-    cliInstallationRepo: 'cli'
+    cliInstallationRepo: 'cli-old'
     installCustomVersion: true
     cliVersion: '1.54.0'
 
