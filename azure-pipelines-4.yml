@@ -14,9 +14,9 @@ steps:
 - task: JFrogToolsInstaller@1
   inputs:
     artifactoryConnection: 'hts2-accesstoken'
-    cliInstallationRepo: 'jf-cli-remote'
+    cliInstallationRepo: 'cli'
     installCustomVersion: true
-    cliVersion: '2.51.1'
+    cliVersion: '1.54.0'
 
 - task: JFrogDocker@1
   inputs:
