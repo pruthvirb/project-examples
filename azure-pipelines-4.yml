@@ -10,6 +10,13 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: JFrogToolsInstaller@1
+  inputs:
+    artifactoryConnection: 'cloud'
+    cliInstallationRepo: 'jf-remote'
+    installCustomVersion: true
+    cliVersion: '2.51.1'
+
 - task: JFrogDocker@1
   inputs:
     command: 'Pull'
