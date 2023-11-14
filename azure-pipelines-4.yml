@@ -14,7 +14,7 @@ steps:
   inputs:
     command: 'Pull'
     artifactoryConnection: 'hts2-accesstoken'
-    imageName: 'hts2-ujwal-docker.jfrog.io/nginx:latest'
+    imageName: 'hts2-jana-docker-virtual.jfrog.io/nginx:latest'
     collectBuildInfo: true
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
@@ -24,7 +24,7 @@ steps:
   inputs:
     command: 'Push'
     artifactoryConnection: 'hts2-accesstoken'
-    imageName: 'hts2-ujwal-docker.jfrog.io/nginx:latest'
+    imageName: 'hts2-jana-docker-virtual.jfrog.io/nginx:latest'
     collectBuildInfo: true
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
