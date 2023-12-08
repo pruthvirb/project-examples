@@ -11,10 +11,7 @@ pool:
 
 steps:
 
-- task: JFrogToolsInstaller@1
-  inputs:
-    artifactoryConnection: 'hts2-accesstoken'
-    cliInstallationRepo: 'cli-old'
+
 
 - task: JFrogDocker@1
   inputs:
